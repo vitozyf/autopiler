@@ -8,7 +8,7 @@
     <main>
       <div class="left-side">
         <span class="title">
-          Welcome lll
+          Welcome l
         </span>
         <system-information></system-information>
       </div>
