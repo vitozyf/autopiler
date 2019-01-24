@@ -21,7 +21,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "electron-vue",
+    "productName": "抽奖系统",
     "appId": "com.example.yourapp",
     "directories": {
       "output": "build"

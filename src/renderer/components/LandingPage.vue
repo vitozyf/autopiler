@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 * {
@@ -97,14 +97,8 @@ main > div {
   flex-direction: column;
 }
 
-.welcome {
-  color: #555;
-  font-size: 23px;
-  margin-bottom: 10px;
-}
-
 .title {
-  color: #2c3e50;
+  color: red;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 6px;
