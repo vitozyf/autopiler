@@ -1,14 +1,38 @@
 <template>
   <div class="ap-nav">
     <div class='ap-nav-left'>
-      111
+      <ul>
+        <li
+          class="ap-nav-item"
+          v-for="item in NavConfig"
+          :key="item.path"
+        >
+          <router-link
+            :to="item.path"
+            active-class="active"
+          >
+            <i :class="item.icon"></i>
+            <div>
+              {{item.title}}
+            </div>
+          </router-link>
+        </li>
+      </ul>
     </div>
-    <router-view></router-view>
+    <div class='ap-nav-right'>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>
+import NavConfig from '@/router/nav.config.json';
 export default {
   name: 'apnav',
+  data() {
+    return {
+      NavConfig,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -17,9 +41,38 @@ export default {
   height: 100%;
 }
 .ap-nav-left {
-  background-color: #4481f6;
-  width: 300px;
-  color: $brand-primary;
+  background-color: $brand-primary;
+  width: $nav-width;
+  text-align: center;
+  padding: 50px 0;
+  // color: $brand-primary;
+}
+.ap-nav-item {
+  font-size: 18px;
+  cursor: pointer;
+  a {
+    padding: 10px 0;
+    margin: 10px 0;
+    color: #e6e6e6;
+    display: block;
+    position: relative;
+    &.active {
+      color: #fff;
+      &::before {
+        content: '';
+        width: 5px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+.ap-nav-right {
+  flex: 1;
 }
 </style>
 

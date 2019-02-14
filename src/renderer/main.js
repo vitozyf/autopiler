@@ -1,11 +1,17 @@
 import Vue from 'vue';
 import axios from 'axios';
 import electron from 'electron';
+import ElementUI from 'element-ui';
+
+import 'element-ui/lib/theme-chalk/index.css';
 
 import App from './App';
 import router from './router';
 import store from './store';
+
 import './assets/scss/global.scss';
+
+Vue.use(ElementUI);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
 Vue.http = Vue.prototype.$http = axios;
