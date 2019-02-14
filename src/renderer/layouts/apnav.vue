@@ -45,7 +45,6 @@ export default {
   width: $nav-width;
   text-align: center;
   padding: 50px 0;
-  // color: $brand-primary;
 }
 .ap-nav-item {
   font-size: 18px;
@@ -56,6 +55,9 @@ export default {
     color: #e6e6e6;
     display: block;
     position: relative;
+    &:hover {
+      color: #fff;
+    }
     &.active {
       color: #fff;
       &::before {
