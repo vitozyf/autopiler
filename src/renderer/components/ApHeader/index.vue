@@ -18,7 +18,7 @@ export default {
     line-height: 100px;
     font-size: 40px;
   }
-  box-shadow: 0px 0px 1px 1px #ccc;
+  box-shadow: 0px 0px 1px 1px #f0f0f0;
 }
 </style>
 

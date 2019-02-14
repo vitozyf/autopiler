@@ -4,8 +4,9 @@
       <ul>
         <li
           class="ap-nav-item"
-          v-for="item in NavConfig"
+          v-for="(item, index) in NavConfig"
           :key="item.path"
+          v-audio="{index}"
         >
           <router-link
             :to="item.path"
@@ -26,12 +27,19 @@
 </template>
 <script>
 import NavConfig from '@/router/nav.config.json';
+import { mixin } from '@/directives/AudioContext';
 export default {
   name: 'apnav',
+  mixins: [mixin],
   data() {
     return {
       NavConfig,
     };
+  },
+  methods: {
+    bindclick() {
+      console.log(111);
+    },
   },
 };
 </script>
@@ -50,8 +58,8 @@ export default {
   font-size: 18px;
   cursor: pointer;
   a {
-    padding: 10px 0;
-    margin: 10px 0;
+    padding: 15px 0;
+    margin: 15px 0;
     color: #e6e6e6;
     display: block;
     position: relative;

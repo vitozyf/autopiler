@@ -12,6 +12,12 @@
     "icon": "el-icon-menu"
   },
   {
+    "name": "Plugs",
+    "path": "/plugs",
+    "title": "插件",
+    "icon": "el-icon-menu"
+  },
+  {
     "name": "Setting",
     "path": "/setting",
     "title": "设置",
