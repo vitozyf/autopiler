@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <ap-nav />
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
+import ApNav from '@/layouts/apnav.vue';
 export default {
   name: 'electron-vue',
+  components: {
+    ApNav,
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 /* CSS */
+#app {
+  padding: 0;
+  height: 100%;
+}
 </style>

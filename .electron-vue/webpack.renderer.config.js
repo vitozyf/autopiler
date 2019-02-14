@@ -46,7 +46,18 @@ let rendererConfig = {
       },
       {
         test: /\.scss$/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        // use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // 你也可以从一个文件读取，例如 `variables.scss`
+              data: `@import "./src/renderer/globals";`,
+            },
+          },
+        ],
       },
       {
         test: /\.sass$/,
@@ -80,12 +91,9 @@ let rendererConfig = {
           options: {
             extractCSS: process.env.NODE_ENV === 'production',
             loaders: {
-              sass:
-                'vue-style-loader!css-loader!sass-loader?indentedSyntax=1&data=@import "@/globals.scss";',
-              scss:
-                'vue-style-loader!css-loader!sass-loader?data=@import "@/globals.scss";',
-              less:
-                'vue-style-loader!css-loader!less-loader?data=@import "@/globals.scss";',
+              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
+              scss: 'vue-style-loader!css-loader!sass-loader',
+              less: 'vue-style-loader!css-loader!less-loader',
             },
           },
         },
